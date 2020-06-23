@@ -48,8 +48,43 @@ if (CMAKE_VERSION VERSION_GREATER 3.12)
   list(INSERT src-pattern 0 CONFIGURE_DEPENDS)
 endif()
 
-file(GLOB yaml-cpp-contrib-sources ${contrib-pattern})
-file(GLOB yaml-cpp-sources ${src-pattern})
+# file(GLOB yaml-cpp-contrib-sources ${contrib-pattern})
+# file(GLOB yaml-cpp-sources ${src-pattern})
+set(yaml-cpp-contrib-sources
+  src/contrib/graphbuilderadapter.cpp
+  src/contrib/graphbuilder.cpp
+)
+set(yaml-cpp-sources
+  src/binary.cpp
+  src/convert.cpp
+  src/depthguard.cpp
+  src/directives.cpp
+  src/emit.cpp
+  src/emitfromevents.cpp
+  src/emitter.cpp
+  src/emitterstate.cpp
+  src/emitterutils.cpp
+  src/exceptions.cpp
+  src/exp.cpp
+  src/memory.cpp
+  src/nodebuilder.cpp
+  src/node.cpp
+  src/node_data.cpp
+  src/nodeevents.cpp
+  src/null.cpp
+  src/ostream_wrapper.cpp
+  src/parse.cpp
+  src/parser.cpp
+  src/regex_yaml.cpp
+  src/scanner.cpp
+  src/scanscalar.cpp
+  src/scantag.cpp
+  src/scantoken.cpp
+  src/simplekey.cpp
+  src/singledocparser.cpp
+  src/stream.cpp
+  src/tag.cpp
+)
 
 set(msvc-rt $<TARGET_PROPERTY:MSVC_RUNTIME_LIBRARY>)
 
